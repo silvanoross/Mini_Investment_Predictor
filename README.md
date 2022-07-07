@@ -2,5 +2,7 @@
 ## Predicts future investment values
 
 Enter your initial investment, interest rate, years in the future 
-and compound rate to get an estimate of your future portfolio value
+and compound rate to get an estimate of your future portfolio value.
+
+### python script
 
