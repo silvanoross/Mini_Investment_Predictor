@@ -38,11 +38,14 @@ def calculate():
     # years = years_var.get()
     # compound = compound_var.get()
     try:
-        final_value = initial_var.get() * (1 + ((interest_var.get() / 100) / compound_var.get())) ** (
-                years_var.get() * compound_var.get())
-        # convert to string values
-        disp_text.config(
-            text="After " + str(years_var.get()) + " years your portfolio will be worth $" + str(final_value))
+        if compound_var.get() > 0:
+            final_value = initial_var.get() * (1 + ((interest_var.get() / 100) / compound_var.get())) ** (
+                    years_var.get() * compound_var.get())
+            # convert to string values
+            disp_text.config(
+                text=f"After {years_var.get()} years your portfolio will be worth ${final_value: .2f}")
+        else:
+            print("A value of 0 was entered somewhere, try to run this again")
     except Exception as e:
         print("Compound rate cannot be zero")
         print(e, e.__doc__, type(e), sep='\n')
